@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "En formación para Desarrollo Full-Stack ",
+    company: "CodeAcademy",
+    description:
+      "Aprendí sobre HTML, CSS, JavaScript y tengo conocimientos básicos en los siguientes frameworks:  Astro, React, Node JS. Tambien se manejar el control de versiones Git y GitHub para hacer trabajos en equipo. Manejo de Bases de datos SQL.",
+    link: "",
+  },
+  {
+    date: "Marzo 2023",
+    title: "Ingeniería de Software con Inteligencia Artificial",
+    company: "SENATI Perú",
+    description:
+      "Estudié por tres años y Obtuve el título de Profesional Técnico. En el Centro de Formación Profesional en Nuevo Chimbote - Perú, donde aprendí conceptos de programación, desarrollo de software Web y Móvil. Tambien aprendí conceptos como el Machine Learning, Ciencia de datos, Inteligencia artificial y el Internet de las Cosas(IoT).",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,103 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Html from "./icons/Html.astro"
+import Css from "./icons/Css.astro"
+import Js from "./icons/Js.astro"
+import Astro1 from "./icons/New.astro"
+import Git from "./icons/git.astro"
+import React from "./icons/react.astro"
+import Sql from "./icons/sql.astro"
+import Type from "./icons/type.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-[#003159] text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#003159] text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: Css,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#003159] text-white",
+    icon: Js,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: Astro1,
+  },
+  GITHUB: {
+    name: "GitHub",
+    class: "bg-[#003159] text-white",
+    icon: GitHub,
+  },
+  GIT: {
+    name: "Git",
+    class: "bg-[#003159] text-white",
+    icon: Git,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  SQL: {
+    name: "SQL",
+    class: "bg-[#003159] text-white",
+    icon: Sql,
+  },
+  TYPE: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: Type,
+  },
+}
+const PROJECTS = [
+  {
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.NEXT, TAGS.ASTRO, TAGS.TAILWIND, TAGS.GITHUB, TAGS.GIT, TAGS.REACT, TAGS.SQL, TAGS.TYPE],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({tags}) => (
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>      
+    </div>
+  </div>
+    ))
+  }
+</div>
+
+
+
