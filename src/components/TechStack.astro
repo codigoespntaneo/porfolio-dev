@@ -1,0 +1,28 @@
+---
+import Html from "./icons/Html.astro"
+import Css from "./icons/Css.astro"
+import Js from "./icons/Js.astro"
+import AstroIcon from "./icons/New.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import GitHub from "./icons/GitHub.astro"
+
+const SKILLS = [
+  { name: "HTML", icon: Html },
+  { name: "CSS", icon: Css },
+  { name: "JavaScript", icon: Js },
+  { name: "Astro", icon: AstroIcon },
+  { name: "Tailwind CSS", icon: Tailwind },
+  { name: "Git", icon: GitHub },
+]
+---
+
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+  {
+    SKILLS.map(({ name, icon: Icon }) => (
+      <div class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+        <Icon class="size-5" />
+        <span>{name}</span>
+      </div>
+    ))
+  }
+</div>

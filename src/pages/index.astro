@@ -9,7 +9,9 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro"
 import Projects from "../components/Projects.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
+import TechStack from "../components/TechStack.astro"
 import TitleSection from "../components/TitleSection.astro"
+import Layers from "../components/icons/Layers.astro"
 ---
 
 <Layout
@@ -18,9 +20,7 @@ import TitleSection from "../components/TitleSection.astro"
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
     <div class="space-y-24">
     <SectionContainer id="experiencia">
@@ -29,6 +29,14 @@ import TitleSection from "../components/TitleSection.astro"
         Experiencia 
       </TitleSection>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="tecnologias">
+      <TitleSection>
+        <Layers class="size-7" />
+        Tecnologías
+      </TitleSection>
+      <TechStack />
     </SectionContainer>
 
     <SectionContainer id="proyectos">

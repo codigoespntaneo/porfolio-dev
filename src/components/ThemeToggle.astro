@@ -10,6 +10,9 @@ const THEMES = ["Light", "Dark", "System"]
   <button
     transition:persist
     id="theme-toggle-btn"
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-label="Cambiar tema"
     class="appearance-none border-none flex hover:scale-110 transition-transform duration-200"
   >
     <span class="sr-only">Elige el tema</span>
@@ -26,12 +29,14 @@ const THEMES = ["Light", "Dark", "System"]
   <div
     transition:persist
     id="themes-menu"
+    role="menu"
+    aria-labelledby="theme-toggle-btn"
     class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-200 bg-white/95 dark:bg-gray-900/95 dark:border-gray-700 shadow-lg backdrop-blur-md"
   >
     <ul>
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm transition-colors">
+          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm transition-colors" role="menuitem">
             {theme}
           </li>
         ))
@@ -106,6 +111,7 @@ const THEMES = ["Light", "Dark", "System"]
     e.stopPropagation()
     const isClosed = !themesMenu.classList.contains("open")
     themesMenu.classList[isClosed ? "add" : "remove"]("open")
+    e.currentTarget.setAttribute("aria-expanded", isClosed.toString())
   })
 
   document.querySelectorAll(".themes-menu-option").forEach((element) => {
